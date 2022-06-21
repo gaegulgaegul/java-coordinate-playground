@@ -1,26 +1,23 @@
 package rentcompany;
 
-public abstract class Car {
+public abstract class Car implements FuelFindable {
+    private double tripDistance;
 
-    /**
-     * 리터당 이동 거리. 즉, 연비
-     */
-    abstract double getDistancePerLiter();
+    public Car(double tripDistance) {
+        this.tripDistance = tripDistance;
+    }
 
     /**
      * 여행하려는 거리
      */
-    abstract double getTripDistance();
+    @Override
+    public double getTripDistance() {
+        return this.tripDistance;
+    }
 
     /**
      * 차종의 이름
      */
     abstract String getName();
 
-    /**
-     * 주입해야할 연료량을 구한다.
-     */
-    double getChargeQuantity() {
-        return getTripDistance() / getDistancePerLiter();
-    }
 }

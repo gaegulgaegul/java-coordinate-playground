@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class RentCompany {
-    private static final String NEWLINE = System.getProperty("line.separator");
+    protected static final String NEWLINE = System.getProperty("line.separator");
 
     private List<Car> cars;
 
@@ -24,7 +24,7 @@ public class RentCompany {
     public String generateReport() {
         return cars.stream()
                 .map(car -> car.getName() + " : " + formatting(car.getChargeQuantity()) + "리터")
-                .collect(Collectors.joining(NEWLINE)) + NEWLINE;
+                .collect(Collectors.joining(NEWLINE));
     }
 
     private String formatting(double decimal) {
