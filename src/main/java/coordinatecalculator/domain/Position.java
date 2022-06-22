@@ -24,4 +24,9 @@ public class Position {
         return Objects.hash(pointX, pointY);
     }
 
+    public double calculateDistance(Position position) {
+        double valueX = this.pointX - position.pointX;
+        double valueY = this.pointY - position.pointY;
+        return Math.sqrt(Math.pow(valueX, 2) + Math.pow(valueY, 2));
+    }
 }
