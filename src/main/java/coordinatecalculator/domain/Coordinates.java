@@ -19,10 +19,14 @@ public class Coordinates {
                 .collect(Collectors.toList());
     }
 
-    public Positions getPositions() {
+    public Line getLine() {
         List<Position> positions = coordinates.stream()
                 .map(Coordinate::getPosition)
                 .collect(Collectors.toList());
-        return new Positions(positions);
+
+        if (positions.size() == 2) {
+            return new Line(positions.get(0), positions.get(1));
+        }
+        return null;
     }
 }

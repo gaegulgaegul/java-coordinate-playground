@@ -22,7 +22,7 @@ public class CoordinateTest {
     @DisplayName("범위 이외의 좌표값 입력")
     @ValueSource(strings = {"(-1,-1)", "(25,25)"})
     void wrong_number_position(String coordinateText) {
-        assertThatThrownBy(() -> new Coordinate(coordinateText).getPosition())
+        assertThatThrownBy(() -> new Coordinate(coordinateText))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 

@@ -15,8 +15,7 @@ public class CoordinatesTest {
     @DisplayName("좌표값을 두 개 입력한 경우")
     void create_2_positions() {
         Coordinates coordinates = new Coordinates("(10,10)-(14,15)");
-        List<Position> actual = Arrays.asList(new Position(10,10), new Position(14,15));
-        assertThat(coordinates.getPositions()).isEqualTo(new Positions(actual));
+        assertThat(coordinates.getLine()).isEqualTo(new Line(new Position(10,10), new Position(14,15)));
     }
 
     @Test
