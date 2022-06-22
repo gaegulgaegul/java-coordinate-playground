@@ -27,11 +27,11 @@ public class Graph {
     }
 
     private String drawGraph() {
-        StringBuilder stringBuilder = new StringBuilder();
-        while (!stack.isEmpty()) {
-            stringBuilder.append(stack.pop() + NEWLINE);
-        }
-        return stringBuilder.toString();
+        return combineString(builder -> {
+            while (!stack.isEmpty()) {
+                builder.append(stack.pop() + NEWLINE);
+            }
+        });
     }
 
     private void pushGraph() {
@@ -42,32 +42,33 @@ public class Graph {
     }
 
     private String getGraphRow(int pointY) {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(getAxisYHeader(pointY));
+        return combineString(builder -> {
+            builder.append(getAxisYHeader(pointY));
 
-        if (pointY == 0) {
-            stringBuilder.append(getAxisX(pointY, TWO_DASH));
-        }
-        stringBuilder.append(getAxisX(pointY, TWO_SPACE));
-        return stringBuilder.toString();
+            String decoration = TWO_SPACE;
+            if (pointY == 0) {
+                decoration = TWO_DASH;
+            }
+            builder.append(getAxisX(pointY, decoration));
+        });
     }
 
-    private String getAxisX(int pointY, String input) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int pointX = 0; pointX <= 24; pointX++) {
-            stringBuilder.append(getPointView(pointX, pointY, input));
-        }
-        return stringBuilder.toString();
+    private String getAxisX(int pointY, String decoration) {
+        return combineString(builder -> {
+            for (int pointX = 0; pointX <= 24; pointX++) {
+                builder.append(getPointView(pointX, pointY, decoration));
+            }
+        });
     }
 
-    private String getPointView(int pointX, int pointY, String input) {
+    private String getPointView(int pointX, int pointY, String decoration) {
         if (pointX == 0) {
             return EMPTY;
         }
         if (positions.isMatchPosition(new Position(pointX, pointY))) {
             return POINT + SPACE;
         }
-        return input;
+        return decoration;
     }
 
     private String getAxisYHeader(int pointY) {
@@ -81,11 +82,11 @@ public class Graph {
     }
 
     private String getAxisXHeader() {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i <= 24; i++) {
-            stringBuilder.append(getAxisXNumber(i));
-        }
-        return stringBuilder.toString();
+        return combineString(builder -> {
+            for (int i = 0; i <= 24; i++) {
+                builder.append(getAxisXNumber(i));
+            }
+        });
     }
 
     private String getAxisXNumber(int index) {
@@ -96,5 +97,11 @@ public class Graph {
             return TWO_SPACE;
         }
         return String.format("%2d", index);
+    }
+
+    private String combineString(StringBuilderStrategy strategy) {
+        StringBuilder stringBuilder = new StringBuilder();
+        strategy.append(stringBuilder);
+        return stringBuilder.toString();
     }
 }
