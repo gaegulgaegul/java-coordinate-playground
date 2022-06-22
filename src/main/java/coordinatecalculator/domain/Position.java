@@ -11,6 +11,12 @@ public class Position {
         this.pointY = y;
     }
 
+    public double calculateDistance(Position position) {
+        double valueX = this.pointX - position.pointX;
+        double valueY = this.pointY - position.pointY;
+        return Math.sqrt(Math.pow(valueX, 2) + Math.pow(valueY, 2));
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -24,9 +30,4 @@ public class Position {
         return Objects.hash(pointX, pointY);
     }
 
-    public double calculateDistance(Position position) {
-        double valueX = this.pointX - position.pointX;
-        double valueY = this.pointY - position.pointY;
-        return Math.sqrt(Math.pow(valueX, 2) + Math.pow(valueY, 2));
-    }
 }

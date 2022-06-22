@@ -15,9 +15,12 @@ public class Line {
         return firstPosition.calculateDistance(secondPosition);
     }
 
-    @Override
-    public String toString() {
-        return "두 점 사이의 거리는 " + length();
+    public String getGraphView() {
+        return new Graph(firstPosition, secondPosition).draw();
+    }
+
+    public String getComment() {
+        return "두 점 사이의 거리는";
     }
 
     @Override
