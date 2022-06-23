@@ -19,7 +19,7 @@ public class Coordinates {
                 .collect(Collectors.toList());
     }
 
-    public Line getLine() {
+    public Shape getShape() {
         List<Position> positions = coordinates.stream()
                 .map(Coordinate::getPosition)
                 .collect(Collectors.toList());

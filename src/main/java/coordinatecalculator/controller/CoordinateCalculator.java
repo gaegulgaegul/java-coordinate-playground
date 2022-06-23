@@ -1,7 +1,7 @@
 package coordinatecalculator.controller;
 
 import coordinatecalculator.domain.Coordinates;
-import coordinatecalculator.domain.Line;
+import coordinatecalculator.domain.Shape;
 import coordinatecalculator.view.InputView;
 import coordinatecalculator.view.ResultView;
 
@@ -9,9 +9,9 @@ public class CoordinateCalculator {
 
     public void execute() {
         Coordinates coordinates = getCoordinates();
-        Line line = coordinates.getLine();
-        ResultView.print(line.getGraphView());
-        ResultView.printDistance(line.getComment(), line.length());
+        Shape shape = coordinates.getShape();
+        ResultView.print(shape.getGraphView());
+        ResultView.printDistance(shape.getComment(), shape.calculate());
     }
 
     private Coordinates getCoordinates() {
