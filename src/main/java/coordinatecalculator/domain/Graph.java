@@ -1,6 +1,5 @@
 package coordinatecalculator.domain;
 
-import java.util.Arrays;
 import java.util.Stack;
 
 public class Graph {
@@ -16,8 +15,8 @@ public class Graph {
     private final Positions positions;
     private final Stack<String> stack;
 
-    public Graph(Position firstPosition, Position secondPosition) {
-        this.positions = new Positions(Arrays.asList(firstPosition, secondPosition));
+    public Graph(Positions positions) {
+        this.positions = positions;
         this.stack = new Stack<>();
     }
 

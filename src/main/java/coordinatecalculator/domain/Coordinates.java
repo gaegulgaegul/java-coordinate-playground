@@ -20,13 +20,18 @@ public class Coordinates {
     }
 
     public Shape getShape() {
-        List<Position> positions = coordinates.stream()
+        Positions positions = getPositions();
+
+        if (positions.isRectangle()) {
+            return new Rectangle(positions);
+        }
+        return new Line(positions);
+    }
+
+    private Positions getPositions() {
+        List<Position> positionList = coordinates.stream()
                 .map(Coordinate::getPosition)
                 .collect(Collectors.toList());
-
-        if (positions.size() == 2) {
-            return new Line(positions.get(0), positions.get(1));
-        }
-        return null;
+        return new Positions(positionList);
     }
 }
