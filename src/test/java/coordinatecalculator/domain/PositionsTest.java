@@ -33,6 +33,18 @@ class PositionsTest {
     }
 
     @Test
+    @DisplayName("삼각형 여부 확인")
+    void is_triangle() {
+        List<Position> positionList = Arrays.asList(
+                new Position(10, 10),
+                new Position(14, 15),
+                new Position(20, 8)
+        );
+        Positions positions = new Positions(positionList);
+        assertThat(positions.isTriangle()).isTrue();
+    }
+
+    @Test
     @DisplayName("두 좌표의 거리 구하기")
     void get_length_of_line() {
         List<Position> positionList = Arrays.asList(new Position(10, 10), new Position(14, 15));

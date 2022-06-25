@@ -25,6 +25,9 @@ public class Coordinates {
         if (positions.isRectangle()) {
             return new Rectangle(positions);
         }
+        if (positions.isTriangle()) {
+            return new Triangle(positions);
+        }
         return new Line(positions);
     }
 

@@ -18,6 +18,10 @@ public class Positions {
         return positions.size() == 4;
     }
 
+    public boolean isTriangle() {
+        return positions.size() == 3;
+    }
+
     public double length(int standard, int target) {
         return positions.get(standard).calculateDistance(positions.get(target));
     }
@@ -34,4 +38,5 @@ public class Positions {
     public int hashCode() {
         return Objects.hash(positions);
     }
+
 }
