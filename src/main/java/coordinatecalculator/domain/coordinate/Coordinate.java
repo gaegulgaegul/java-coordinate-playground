@@ -1,4 +1,6 @@
-package coordinatecalculator.domain;
+package coordinatecalculator.domain.coordinate;
+
+import coordinatecalculator.domain.point.Position;
 
 public class Coordinate {
     private static final String COMMA = ",";

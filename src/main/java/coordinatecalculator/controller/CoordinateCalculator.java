@@ -1,7 +1,7 @@
 package coordinatecalculator.controller;
 
-import coordinatecalculator.domain.Coordinates;
-import coordinatecalculator.domain.Shape;
+import coordinatecalculator.domain.coordinate.Coordinates;
+import coordinatecalculator.domain.shape.Shape;
 import coordinatecalculator.view.InputView;
 import coordinatecalculator.view.ResultView;
 

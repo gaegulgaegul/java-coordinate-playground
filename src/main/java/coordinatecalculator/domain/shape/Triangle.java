@@ -1,4 +1,6 @@
-package coordinatecalculator.domain;
+package coordinatecalculator.domain.shape;
+
+import coordinatecalculator.domain.point.Positions;
 
 public class Triangle extends Shape {
 

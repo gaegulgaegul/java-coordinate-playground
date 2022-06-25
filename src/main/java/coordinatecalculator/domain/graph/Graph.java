@@ -1,4 +1,7 @@
-package coordinatecalculator.domain;
+package coordinatecalculator.domain.graph;
+
+import coordinatecalculator.domain.point.Position;
+import coordinatecalculator.domain.point.Positions;
 
 import java.util.Stack;
 

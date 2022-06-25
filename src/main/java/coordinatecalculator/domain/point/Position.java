@@ -1,4 +1,4 @@
-package coordinatecalculator.domain;
+package coordinatecalculator.domain.point;
 
 import java.util.Objects;
 

@@ -1,5 +1,11 @@
-package coordinatecalculator.domain;
+package coordinatecalculator.domain.coordinate;
 
+import coordinatecalculator.domain.coordinate.Coordinates;
+import coordinatecalculator.domain.point.Position;
+import coordinatecalculator.domain.point.Positions;
+import coordinatecalculator.domain.shape.Line;
+import coordinatecalculator.domain.shape.Rectangle;
+import coordinatecalculator.domain.shape.Triangle;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

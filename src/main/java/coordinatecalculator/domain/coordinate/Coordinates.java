@@ -1,4 +1,11 @@
-package coordinatecalculator.domain;
+package coordinatecalculator.domain.coordinate;
+
+import coordinatecalculator.domain.point.Position;
+import coordinatecalculator.domain.point.Positions;
+import coordinatecalculator.domain.shape.Line;
+import coordinatecalculator.domain.shape.Rectangle;
+import coordinatecalculator.domain.shape.Shape;
+import coordinatecalculator.domain.shape.Triangle;
 
 import java.util.Arrays;
 import java.util.List;

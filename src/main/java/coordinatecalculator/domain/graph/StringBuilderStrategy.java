@@ -1,4 +1,4 @@
-package coordinatecalculator.domain;
+package coordinatecalculator.domain.graph;
 
 @FunctionalInterface
 public interface StringBuilderStrategy {

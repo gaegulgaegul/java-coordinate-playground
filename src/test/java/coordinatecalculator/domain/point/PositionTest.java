@@ -1,5 +1,6 @@
-package coordinatecalculator.domain;
+package coordinatecalculator.domain.point;
 
+import coordinatecalculator.domain.point.Position;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
