@@ -4,6 +4,8 @@ import coordinatecalculator.domain.point.Positions;
 
 public class Line extends Shape {
 
+    private static final String LINE_COMMENT = "두 점 사이의 거리는";
+
     public Line(Positions positions) {
         super(positions);
     }
@@ -15,7 +17,7 @@ public class Line extends Shape {
 
     @Override
     public String getComment() {
-        return "두 점 사이의 거리는";
+        return LINE_COMMENT;
     }
 
 }

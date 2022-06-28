@@ -14,12 +14,8 @@ public class Positions {
         return positions.stream().anyMatch(position::equals);
     }
 
-    public boolean isRectangle() {
-        return positions.size() == 4;
-    }
-
-    public boolean isTriangle() {
-        return positions.size() == 3;
+    public int size() {
+        return positions.size();
     }
 
     public double length(int standard, int target) {

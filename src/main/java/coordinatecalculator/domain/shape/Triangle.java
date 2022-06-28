@@ -4,6 +4,8 @@ import coordinatecalculator.domain.point.Positions;
 
 public class Triangle extends Shape {
 
+    private static final String TRIANGLE_COMMENT = "삼각형의 넓이는";
+
     public Triangle(Positions positions) {
         super(positions);
     }
@@ -57,6 +59,6 @@ public class Triangle extends Shape {
 
     @Override
     public String getComment() {
-        return "삼각형의 넓이는";
+        return TRIANGLE_COMMENT;
     }
 }

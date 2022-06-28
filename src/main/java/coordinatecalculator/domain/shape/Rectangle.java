@@ -4,10 +4,13 @@ import coordinatecalculator.domain.point.Positions;
 
 public class Rectangle extends Shape {
 
+    private static final String NOT_RECTANGLE_MESSAGE = "직사각형 모양이 아닙니다. 좌표값을 확인해주세요.";
+    private static final String RECTANGLE_COMMENT = "사각형 넓이는";
+
     public Rectangle(Positions positions) {
         super(positions);
         if (isNotRectangle()) {
-            throw new IllegalArgumentException("직사각형 모양이 아닙니다. 좌표값을 확인해주세요.");
+            throw new IllegalArgumentException(NOT_RECTANGLE_MESSAGE);
         }
     }
 
@@ -30,7 +33,7 @@ public class Rectangle extends Shape {
 
     @Override
     public String getComment() {
-        return "사각형 넓이는";
+        return RECTANGLE_COMMENT;
     }
 
 }

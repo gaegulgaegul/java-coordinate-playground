@@ -1,7 +1,5 @@
 package coordinatecalculator.domain.point;
 
-import coordinatecalculator.domain.point.Position;
-import coordinatecalculator.domain.point.Positions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -31,7 +29,7 @@ class PositionsTest {
                 new Position(10, 18)
         );
         Positions positions = new Positions(positionList);
-        assertThat(positions.isRectangle()).isTrue();
+        assertThat(positions.size()).isEqualTo(4);
     }
 
     @Test
@@ -43,7 +41,7 @@ class PositionsTest {
                 new Position(20, 8)
         );
         Positions positions = new Positions(positionList);
-        assertThat(positions.isTriangle()).isTrue();
+        assertThat(positions.size()).isEqualTo(3);
     }
 
     @Test

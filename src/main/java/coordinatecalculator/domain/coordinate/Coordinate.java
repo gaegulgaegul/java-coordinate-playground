@@ -3,6 +3,11 @@ package coordinatecalculator.domain.coordinate;
 import coordinatecalculator.domain.point.Position;
 
 public class Coordinate {
+    private static final String INVALID_INPUT_POINTS = "입력 좌표의 형식이 올바르지 않습니다.";
+    private static final int MIN_POINT = 0;
+    private static final int MAX_POINT = 24;
+    private static final String INVALID_POINT_RANGE = "입력 좌표는 " + MIN_POINT + "~" + MAX_POINT + " 사이의 값을 입력해주세요.";
+
     private static final String COMMA = ",";
     private static final String START_PARENTHESES = "(";
     private static final String END_PARENTHESES = ")";
@@ -13,7 +18,7 @@ public class Coordinate {
 
     public Coordinate(String coordinateText) {
         if (!coordinateText.contains(COMMA) || !coordinateText.startsWith(START_PARENTHESES) || !coordinateText.endsWith(END_PARENTHESES)) {
-            throw new IllegalArgumentException("입력 좌표의 형식이 올바르지 않습니다.");
+            throw new IllegalArgumentException(INVALID_INPUT_POINTS);
         }
 
         this.points = parsePoints(coordinateText);
@@ -33,8 +38,8 @@ public class Coordinate {
     }
 
     private void validRange(int value) {
-        if (value < 0 || value > 24) {
-            throw new IllegalArgumentException("입력 좌표는 0~24 사이의 값을 입력해주세요.");
+        if (value < MIN_POINT || value > MAX_POINT) {
+            throw new IllegalArgumentException(INVALID_POINT_RANGE);
         }
     }
 
